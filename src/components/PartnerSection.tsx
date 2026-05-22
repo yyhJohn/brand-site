@@ -68,7 +68,7 @@ export function PartnerSection() {
           Whether it's an AI product, a developer platform, or an internal tool — we're ready.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="mailto:17367009925yyh@gmail.com">
+          <a href="mailto:contact@hoyomax.me">
             <Button variant="primary" className="bg-white text-[#051A24] hover:bg-white/90">
               <Mail className="w-4 h-4" /> Email Us
             </Button>

@@ -31,8 +31,8 @@ export function Footer() {
             </p>
             <ul className="space-y-3">
               <li>
-                <a href="mailto:17367009925yyh@gmail.com" className="font-body text-sm text-[#273C46] hover:text-[#051A24] transition-colors flex items-center gap-2">
-                  <Mail className="w-4 h-4" /> 17367009925yyh@gmail.com
+                <a href="mailto:contact@hoyomax.me" className="font-body text-sm text-[#273C46] hover:text-[#051A24] transition-colors flex items-center gap-2">
+                  <Mail className="w-4 h-4" /> contact@hoyomax.me
                 </a>
               </li>
               <li>
