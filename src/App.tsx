@@ -1,39 +1,12 @@
-import { HeroSection } from './components/HeroSection'
-import { MarqueeSection } from './components/MarqueeSection'
-import { TestimonialSection } from './components/TestimonialSection'
-import { PricingSection } from './components/PricingSection'
-import { TestimonialCarousel } from './components/TestimonialCarousel'
-import { ProductCarousel } from './components/ProductCarousel'
-import { ProjectsSection } from './components/ProjectsSection'
-import { PartnerSection } from './components/PartnerSection'
-import { Footer } from './components/Footer'
-import { CopyrightBar } from './components/CopyrightBar'
-import { BottomNav } from './components/BottomNav'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import AiPage from './pages/AiPage'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white font-body text-[#051A24]">
-      <div id="home">
-        <HeroSection />
-      </div>
-      <MarqueeSection />
-      <TestimonialSection />
-      <div id="services">
-        <PricingSection />
-      </div>
-      <TestimonialCarousel />
-      <div id="products">
-        <ProductCarousel />
-      </div>
-      <div id="projects">
-        <ProjectsSection />
-      </div>
-      <div id="contact">
-        <PartnerSection />
-      </div>
-      <Footer />
-      <CopyrightBar />
-      <BottomNav />
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/ai" element={<AiPage />} />
+    </Routes>
   )
 }

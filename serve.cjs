@@ -20,7 +20,9 @@ const MIME = {
 const server = http.createServer((req, res) => {
   let filePath = path.join(DIST, req.url === '/' ? 'index.html' : req.url);
 
-  if (!fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
+  // SPA fallback: if file doesn't exist or has no extension, serve index.html
+  const reqExt = path.extname(req.url);
+  if (!fs.existsSync(filePath) || fs.statSync(filePath).isDirectory() || (!reqExt && req.url !== '/')) {
     filePath = path.join(DIST, 'index.html');
   }
 
