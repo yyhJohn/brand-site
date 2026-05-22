@@ -13,16 +13,29 @@ export function Footer() {
           </div>
           <div>
             <p className="font-body text-xs uppercase tracking-[0.2em] text-[#273C46]/60 mb-4">
-              Navigation
+              Products
             </p>
             <ul className="space-y-2.5">
-              {['Products', 'Projects', 'Services', 'Contact'].map(item => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase()}`} className="font-body text-sm text-[#273C46] hover:text-[#051A24] transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href="https://uniapi.hoyomax.me" target="_blank" rel="noreferrer" className="font-body text-sm text-[#273C46] hover:text-[#051A24] transition-colors">
+                  UniAPI
+                </a>
+              </li>
+              <li>
+                <a href="https://gpa.hoyomax.me" target="_blank" rel="noreferrer" className="font-body text-sm text-[#273C46] hover:text-[#051A24] transition-colors">
+                  GPA Planner
+                </a>
+              </li>
+              <li>
+                <a href="#" className="font-body text-sm text-[#273C46] hover:text-[#051A24] transition-colors">
+                  OpenClaw
+                </a>
+              </li>
+              <li>
+                <a href="#" className="font-body text-sm text-[#273C46] hover:text-[#051A24] transition-colors">
+                  Campus Match
+                </a>
+              </li>
             </ul>
           </div>
           <div>

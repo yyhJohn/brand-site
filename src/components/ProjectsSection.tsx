@@ -14,12 +14,14 @@ const PROJECTS = [
     category: 'Developer Tools',
     year: '2024',
     description: 'Centralised API management platform with TLS automation and Cloudflare DNS integration.',
+    link: 'https://uniapi.hoyomax.me',
   },
   {
     name: 'AI Study Planner',
     category: 'Education',
     year: '2023',
     description: 'Intelligent university comparison and GPA strategy planning tool for students.',
+    link: 'https://gpa.hoyomax.me',
   },
   {
     name: 'Issue Reporting System',
@@ -48,9 +50,15 @@ export function ProjectsSection() {
         </div>
 
         <div className="space-y-0">
-          {PROJECTS.map((project, i) => (
-            <div
+          {PROJECTS.map((project, i) => {
+            const Wrapper = project.link ? 'a' : 'div'
+            const wrapperProps = project.link
+              ? { href: project.link, target: '_blank', rel: 'noreferrer' }
+              : {}
+            return (
+            <Wrapper
               key={project.name}
+              {...wrapperProps}
               className={cn(
                 'group flex items-center justify-between py-6 border-b border-[#051A24]/6 last:border-0 cursor-pointer hover:bg-[#F6FCFF]/50 -mx-4 px-4 rounded-xl transition-all duration-300',
                 isInView ? 'animate-fadeInUp' : 'opacity-0'
@@ -72,8 +80,9 @@ export function ProjectsSection() {
                 </p>
               </div>
               <ArrowUpRight className="w-5 h-5 text-[#273C46]/30 group-hover:text-[#051A24] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 ml-4" />
-            </div>
-          ))}
+            </Wrapper>
+            )
+          })}
         </div>
       </div>
     </section>

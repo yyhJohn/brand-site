@@ -14,12 +14,14 @@ const PRODUCTS = [
     name: 'UniAPI Developer Platform',
     tags: ['API', 'TLS', 'Cloudflare'],
     description: 'Centralised API routing with automatic TLS, Cloudflare DNS management, and developer-first ergonomics.',
+    link: 'https://uniapi.hoyomax.me',
   },
   {
     icon: BookOpen,
     name: 'AI Study Planner',
     tags: ['Education', 'AI', 'Strategy'],
     description: 'University comparison engine with GPA strategy planning and personalised study recommendations.',
+    link: 'https://gpa.hoyomax.me',
   },
   {
     icon: Users,
@@ -56,9 +58,14 @@ export function ProductCarousel() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PRODUCTS.map((product, i) => {
             const Icon = product.icon
+            const Card = product.link ? 'a' : 'div'
+            const cardProps = product.link
+              ? { href: product.link, target: '_blank', rel: 'noreferrer' }
+              : {}
             return (
-              <div
+              <Card
                 key={product.name}
+                {...cardProps}
                 className={cn(
                   'group rounded-2xl p-6 bg-white border border-[#051A24]/6 shadow-[0_1px_8px_rgba(5,26,36,0.03)] hover:shadow-[0_6px_24px_rgba(5,26,36,0.08)] transition-all duration-400 hover:border-[#051A24]/12',
                   isInView ? 'animate-fadeInUp' : 'opacity-0'
@@ -81,7 +88,7 @@ export function ProductCarousel() {
                 <p className="font-body text-sm text-[#273C46] leading-relaxed">
                   {product.description}
                 </p>
-              </div>
+              </Card>
             )
           })}
         </div>
