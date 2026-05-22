@@ -49,7 +49,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="font-body text-sm text-[#273C46] hover:text-[#051A24] transition-colors flex items-center gap-2">
+                <a href="https://github.com/yyhJohn" target="_blank" rel="noreferrer" className="font-body text-sm text-[#273C46] hover:text-[#051A24] transition-colors flex items-center gap-2">
                   <ExternalLink className="w-4 h-4" /> GitHub
                 </a>
               </li>
