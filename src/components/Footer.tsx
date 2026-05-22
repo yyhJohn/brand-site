@@ -27,12 +27,12 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="font-body text-sm text-[#273C46] hover:text-[#051A24] transition-colors">
+                <a href="https://github.com/yyhJohn" target="_blank" rel="noreferrer" className="font-body text-sm text-[#273C46] hover:text-[#051A24] transition-colors">
                   OpenClaw
                 </a>
               </li>
               <li>
-                <a href="#" className="font-body text-sm text-[#273C46] hover:text-[#051A24] transition-colors">
+                <a href="https://github.com/yyhJohn" target="_blank" rel="noreferrer" className="font-body text-sm text-[#273C46] hover:text-[#051A24] transition-colors">
                   Campus Match
                 </a>
               </li>

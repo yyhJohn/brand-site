@@ -7,7 +7,7 @@ export function HeroSection() {
   const { ref, isInView } = useInViewAnimation()
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-16 bg-white">
+    <section id="home" ref={ref} className="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-16 bg-white">
       <div className={cn(
         'max-w-3xl mx-auto text-center',
         isInView ? 'animate-fadeInUp' : 'opacity-0'
@@ -24,12 +24,16 @@ export function HeroSection() {
           AI products, developer platforms, and creative systems — designed with precision, shipped with care.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button variant="primary">
-            View Our Work <ArrowRight className="w-4 h-4" />
-          </Button>
-          <Button variant="secondary">
-            Get in Touch
-          </Button>
+          <a href="#projects">
+            <Button variant="primary">
+              View Our Work <ArrowRight className="w-4 h-4" />
+            </Button>
+          </a>
+          <a href="mailto:contact@hoyomax.me">
+            <Button variant="secondary">
+              Get in Touch
+            </Button>
+          </a>
         </div>
       </div>
 

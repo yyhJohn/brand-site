@@ -26,7 +26,7 @@ export function PricingSection() {
   const { ref, isInView } = useInViewAnimation()
 
   return (
-    <section ref={ref} className="py-24 md:py-32 px-6 bg-[#F6FCFF]">
+    <section id="services" ref={ref} className="py-24 md:py-32 px-6 bg-[#F6FCFF]">
       <div className="max-w-4xl mx-auto">
         <div className={cn(
           'text-center mb-16',
@@ -88,15 +88,17 @@ export function PricingSection() {
                   </li>
                 ))}
               </ul>
-              <Button
-                variant={plan.highlight ? 'secondary' : 'primary'}
-                className={cn(
-                  'w-full',
-                  plan.highlight && 'bg-white/10 border-white/20 text-white hover:bg-white/20'
-                )}
-              >
-                {plan.cta} <ArrowRight className="w-4 h-4" />
-              </Button>
+              <a href="mailto:contact@hoyomax.me" className="block">
+                <Button
+                  variant={plan.highlight ? 'secondary' : 'primary'}
+                  className={cn(
+                    'w-full',
+                    plan.highlight && 'bg-white/10 border-white/20 text-white hover:bg-white/20'
+                  )}
+                >
+                  {plan.cta} <ArrowRight className="w-4 h-4" />
+                </Button>
+              </a>
             </div>
           ))}
         </div>

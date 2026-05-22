@@ -41,7 +41,7 @@ export function ProductCarousel() {
   const { ref, isInView } = useInViewAnimation()
 
   return (
-    <section ref={ref} className="py-24 md:py-32 px-6 bg-white">
+    <section id="products" ref={ref} className="py-24 md:py-32 px-6 bg-white">
       <div className="max-w-5xl mx-auto">
         <div className={cn(
           'text-center mb-16',

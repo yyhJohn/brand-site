@@ -35,7 +35,7 @@ export function ProjectsSection() {
   const { ref, isInView } = useInViewAnimation()
 
   return (
-    <section ref={ref} className="py-24 md:py-32 px-6 bg-white">
+    <section id="projects" ref={ref} className="py-24 md:py-32 px-6 bg-white">
       <div className="max-w-4xl mx-auto">
         <div className={cn(
           'text-center mb-16',

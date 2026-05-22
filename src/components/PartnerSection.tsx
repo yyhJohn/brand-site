@@ -37,6 +37,7 @@ export function PartnerSection() {
 
   return (
     <section
+      id="contact"
       ref={(el) => {
         ;(viewRef as React.MutableRefObject<HTMLElement | null>).current = el
         containerRef.current = el
@@ -73,9 +74,11 @@ export function PartnerSection() {
               <Mail className="w-4 h-4" /> Email Us
             </Button>
           </a>
-          <Button variant="secondary" className="border-white/20 text-white hover:bg-white/10">
-            View GitHub <ArrowRight className="w-4 h-4" />
-          </Button>
+          <a href="https://github.com/yyhJohn" target="_blank" rel="noreferrer">
+            <Button variant="secondary" className="border-white/20 text-white hover:bg-white/10">
+              View GitHub <ArrowRight className="w-4 h-4" />
+            </Button>
+          </a>
         </div>
       </div>
     </section>
