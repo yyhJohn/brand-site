@@ -10,6 +10,7 @@ const PRODUCTS = [
     tags: ['TypeScript', 'PostgreSQL', 'Stripe', 'Nginx'],
     description: 'Aggregate 50+ AI model providers behind a single API. Subscription management, usage analytics, and intelligent routing. Deployed with TLS, Cloudflare DNS, and production-ready infrastructure.',
     link: 'https://uniapi.hoyomax.me',
+    image: '/uniapi-preview.png',
   },
   {
     icon: BookOpen,
@@ -18,6 +19,7 @@ const PRODUCTS = [
     tags: ['React', 'PostgreSQL', 'AI', 'Tailwind CSS'],
     description: 'Intelligent academic planning platform. Compare 500+ global universities, predict GPA trajectories, optimize course selections, and get personalised application strategy recommendations.',
     link: 'https://gpa.hoyomax.me',
+    image: '/gpa-preview.png',
   },
 ]
 
@@ -71,6 +73,14 @@ export function ProductCarousel() {
                 <p className="font-body text-sm text-[#273C46] leading-relaxed">
                   {product.description}
                 </p>
+                {product.image && (
+                  <img
+                    src={product.image}
+                    alt={`${product.name} preview`}
+                    className="mt-4 w-full rounded-xl shadow-sm object-cover h-48"
+                    loading="lazy"
+                  />
+                )}
               </a>
             )
           })}
