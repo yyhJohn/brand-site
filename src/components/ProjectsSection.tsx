@@ -4,28 +4,20 @@ import { cn } from '../lib/utils'
 
 const PROJECTS = [
   {
-    name: 'OpenClaw AI Gateway',
-    description: 'AI automation gateway with providers, tools, browser control, Discord integration, and secure systemd deployment.',
+    name: 'UniAPI',
+    subtitle: 'Unified AI API Gateway',
+    description: 'Aggregate 50+ AI model providers behind a single API. Subscription management, usage analytics, and intelligent routing built-in. Deployed with TypeScript, PostgreSQL, Stripe, Nginx, and Cloudflare DNS.',
     image: 'https://motionsites.ai/assets/hero-space-voyage-preview-eECLH3Yc.gif',
-    link: '#',
-  },
-  {
-    name: 'UniAPI Developer Platform',
-    description: 'A developer-facing API and frontend platform deployed with Vite, Nginx, FRP, TLS, and Cloudflare DNS.',
-    image: 'https://motionsites.ai/assets/hero-portfolio-cosmic-preview-BpvWJ3Nc.gif',
     link: 'https://uniapi.hoyomax.me',
+    tags: ['TypeScript', 'PostgreSQL', 'Stripe', 'Nginx'],
   },
   {
     name: 'AI Study Planner',
-    description: 'An AI-powered planning website for university applications, module selection, GPA strategy, and study route decisions.',
+    subtitle: 'AI-powered Study Abroad Planning',
+    description: 'Intelligent academic planning platform for students. Compare 500+ global universities, predict GPA trajectories, optimize course selections, and get AI-powered study abroad recommendations.',
     image: 'https://motionsites.ai/assets/hero-velorah-preview-CJNTtbpd.gif',
     link: 'https://gpa.hoyomax.me',
-  },
-  {
-    name: 'Issue Reporting System',
-    description: 'A Django REST and React system for reporting, processing, and tracking issues with test coverage and team workflow.',
-    image: 'https://motionsites.ai/assets/hero-asme-preview-B_nGDnTP.gif',
-    link: '#',
+    tags: ['React', 'PostgreSQL', 'AI', 'Tailwind CSS'],
   },
 ]
 
@@ -44,11 +36,6 @@ function ProjectItem({ project, index }: { project: typeof PROJECTS[0]; index: n
     return () => obs.disconnect()
   }, [])
 
-  const Wrapper = project.link && project.link !== '#' ? 'a' : 'div'
-  const wrapperProps = project.link && project.link !== '#'
-    ? { href: project.link, target: '_blank', rel: 'noreferrer' }
-    : {}
-
   return (
     <div
       ref={ref}
@@ -57,27 +44,37 @@ function ProjectItem({ project, index }: { project: typeof PROJECTS[0]; index: n
         inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       )}
     >
-      {/* Text block - offset left */}
+      {/* Text block */}
       <div className="ml-4 md:ml-28 mb-6">
-        <Wrapper {...wrapperProps} className="group cursor-pointer">
+        <a href={project.link} target="_blank" rel="noreferrer" className="group cursor-pointer">
+          <p className="font-body text-xs uppercase tracking-[0.3em] text-[#273C46]/60 mb-2">
+            {project.subtitle}
+          </p>
           <h3 className="font-serif text-2xl md:text-3xl font-semibold text-[#051A24] group-hover:text-[#0D212C] transition-colors">
             {project.name}
           </h3>
           <p className="font-body text-sm md:text-base text-[#051A24]/70 mt-2 max-w-lg">
             {project.description}
           </p>
-        </Wrapper>
+          <div className="flex flex-wrap gap-2 mt-3">
+            {project.tags.map(tag => (
+              <span key={tag} className="font-body text-[10px] uppercase tracking-wider text-[#273C46]/50 bg-[#F6FCFF] px-2 py-0.5 rounded-full border border-[#051A24]/6">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </a>
       </div>
 
       {/* Full-width image */}
-      <Wrapper {...wrapperProps}>
+      <a href={project.link} target="_blank" rel="noreferrer">
         <img
           src={project.image}
           alt={`${project.name} preview`}
           className="w-full rounded-2xl shadow-lg object-cover h-[280px] md:h-[500px]"
           loading="lazy"
         />
-      </Wrapper>
+      </a>
     </div>
   )
 }
@@ -93,11 +90,14 @@ export function ProjectsSection() {
           isInView ? 'animate-fadeInUp' : 'opacity-0'
         )}>
           <p className="font-body text-xs uppercase tracking-[0.3em] text-[#273C46]/60 mb-4">
-            Projects
+            Products
           </p>
           <h2 className="font-serif text-4xl md:text-5xl text-[#0D212C]">
-            Selected work
+            What we've built
           </h2>
+          <p className="font-body text-sm text-[#273C46] mt-4 max-w-md mx-auto">
+            Two products, one vision — AI-native tools that ship.
+          </p>
         </div>
 
         <div className="space-y-16 md:space-y-20">

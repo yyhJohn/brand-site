@@ -1,39 +1,23 @@
 import { useInViewAnimation } from '../hooks/useInViewAnimation'
 import { cn } from '../lib/utils'
-import { Bot, Globe, BookOpen, Users, FileText } from 'lucide-react'
+import { Globe, BookOpen } from 'lucide-react'
 
 const PRODUCTS = [
   {
-    icon: Bot,
-    name: 'OpenClaw AI Gateway',
-    tags: ['AI', 'Gateway', 'Tools'],
-    description: 'Multi-model routing, tool orchestration, Discord integration, and browser control — unified under one gateway.',
-  },
-  {
     icon: Globe,
-    name: 'UniAPI Developer Platform',
-    tags: ['API', 'TLS', 'Cloudflare'],
-    description: 'Centralised API routing with automatic TLS, Cloudflare DNS management, and developer-first ergonomics.',
+    name: 'UniAPI',
+    subtitle: 'Unified AI API Gateway',
+    tags: ['TypeScript', 'PostgreSQL', 'Stripe', 'Nginx'],
+    description: 'Aggregate 50+ AI model providers behind a single API. Subscription management, usage analytics, and intelligent routing. Deployed with TLS, Cloudflare DNS, and production-ready infrastructure.',
     link: 'https://uniapi.hoyomax.me',
   },
   {
     icon: BookOpen,
     name: 'AI Study Planner',
-    tags: ['Education', 'AI', 'Strategy'],
-    description: 'University comparison engine with GPA strategy planning and personalised study recommendations.',
+    subtitle: 'AI-powered Study Abroad Planning',
+    tags: ['React', 'PostgreSQL', 'AI', 'Tailwind CSS'],
+    description: 'Intelligent academic planning platform. Compare 500+ global universities, predict GPA trajectories, optimize course selections, and get personalised application strategy recommendations.',
     link: 'https://gpa.hoyomax.me',
-  },
-  {
-    icon: Users,
-    name: 'Campus Match',
-    tags: ['Go', 'PostgreSQL', 'Social'],
-    description: 'Social matching platform built with Go and PostgreSQL — fast, reliable, and privacy-first.',
-  },
-  {
-    icon: FileText,
-    name: 'Issue Reporting System',
-    tags: ['Django', 'React', 'Tracking'],
-    description: 'Full-stack issue tracking with Django backend and React frontend for streamlined bug reporting.',
   },
 ]
 
@@ -55,30 +39,29 @@ export function ProductCarousel() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-8">
           {PRODUCTS.map((product, i) => {
             const Icon = product.icon
-            const Card = product.link ? 'a' : 'div'
-            const cardProps = product.link
-              ? { href: product.link, target: '_blank', rel: 'noreferrer' }
-              : {}
             return (
-              <Card
+              <a
                 key={product.name}
-                {...cardProps}
+                href={product.link}
+                target="_blank"
+                rel="noreferrer"
                 className={cn(
-                  'group rounded-2xl p-6 bg-white border border-[#051A24]/6 shadow-[0_1px_8px_rgba(5,26,36,0.03)] hover:shadow-[0_6px_24px_rgba(5,26,36,0.08)] transition-all duration-400 hover:border-[#051A24]/12',
+                  'group rounded-2xl p-8 bg-white border border-[#051A24]/6 shadow-[0_1px_8px_rgba(5,26,36,0.03)] hover:shadow-[0_6px_24px_rgba(5,26,36,0.08)] transition-all duration-400 hover:border-[#051A24]/12',
                   isInView ? 'animate-fadeInUp' : 'opacity-0'
                 )}
                 style={{ animationDelay: `${i * 80}ms` }}
               >
-                <div className="w-10 h-10 rounded-xl bg-[#F6FCFF] flex items-center justify-center mb-4 group-hover:bg-[#051A24]/5 transition-colors">
-                  <Icon className="w-5 h-5 text-[#051A24]" />
+                <div className="w-12 h-12 rounded-xl bg-[#F6FCFF] flex items-center justify-center mb-5 group-hover:bg-[#051A24]/5 transition-colors">
+                  <Icon className="w-6 h-6 text-[#051A24]" />
                 </div>
-                <h3 className="font-body text-base font-semibold text-[#0D212C] mb-2">
+                <h3 className="font-serif text-2xl font-semibold text-[#0D212C] mb-1">
                   {product.name}
                 </h3>
-                <div className="flex flex-wrap gap-1.5 mb-3">
+                <p className="font-body text-sm text-[#273C46]/60 mb-3">{product.subtitle}</p>
+                <div className="flex flex-wrap gap-1.5 mb-4">
                   {product.tags.map(tag => (
                     <span key={tag} className="font-body text-[10px] uppercase tracking-wider text-[#273C46]/50 bg-[#F6FCFF] px-2 py-0.5 rounded-full">
                       {tag}
@@ -88,7 +71,7 @@ export function ProductCarousel() {
                 <p className="font-body text-sm text-[#273C46] leading-relaxed">
                   {product.description}
                 </p>
-              </Card>
+              </a>
             )
           })}
         </div>
