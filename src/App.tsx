@@ -1,30 +1,37 @@
-import { I18nProvider } from './i18n'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Products from './components/Products'
-import TechCapabilities from './components/TechCapabilities'
-import Stats from './components/Stats'
-import Architecture from './components/Architecture'
-import BrandStory from './components/BrandStory'
-import CTA from './components/CTA'
-import Footer from './components/Footer'
+import { HeroSection } from './components/HeroSection'
+import { MarqueeSection } from './components/MarqueeSection'
+import { TestimonialSection } from './components/TestimonialSection'
+import { ProductCarousel } from './components/ProductCarousel'
+import { ProjectsSection } from './components/ProjectsSection'
+import { PricingSection } from './components/PricingSection'
+import { PartnerSection } from './components/PartnerSection'
+import { Footer } from './components/Footer'
+import { CopyrightBar } from './components/CopyrightBar'
+import { BottomNav } from './components/BottomNav'
 
-function App() {
+export default function App() {
   return (
-    <I18nProvider>
-      <div className="noise relative min-h-screen bg-black text-slate-200">
-        <Navbar />
-        <Hero />
-        <Products />
-        <TechCapabilities />
-        <Stats />
-        <Architecture />
-        <BrandStory />
-        <CTA />
-        <Footer />
+    <div className="min-h-screen bg-white font-body text-[#051A24]">
+      <div id="home">
+        <HeroSection />
       </div>
-    </I18nProvider>
+      <MarqueeSection />
+      <TestimonialSection />
+      <div id="products">
+        <ProductCarousel />
+      </div>
+      <div id="projects">
+        <ProjectsSection />
+      </div>
+      <div id="services">
+        <PricingSection />
+      </div>
+      <div id="contact">
+        <PartnerSection />
+      </div>
+      <Footer />
+      <CopyrightBar />
+      <BottomNav />
+    </div>
   )
 }
-
-export default App
