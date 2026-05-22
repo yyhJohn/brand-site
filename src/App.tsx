@@ -1,9 +1,10 @@
 import { HeroSection } from './components/HeroSection'
 import { MarqueeSection } from './components/MarqueeSection'
 import { TestimonialSection } from './components/TestimonialSection'
+import { PricingSection } from './components/PricingSection'
+import { TestimonialCarousel } from './components/TestimonialCarousel'
 import { ProductCarousel } from './components/ProductCarousel'
 import { ProjectsSection } from './components/ProjectsSection'
-import { PricingSection } from './components/PricingSection'
 import { PartnerSection } from './components/PartnerSection'
 import { Footer } from './components/Footer'
 import { CopyrightBar } from './components/CopyrightBar'
@@ -17,14 +18,15 @@ export default function App() {
       </div>
       <MarqueeSection />
       <TestimonialSection />
+      <div id="services">
+        <PricingSection />
+      </div>
+      <TestimonialCarousel />
       <div id="products">
         <ProductCarousel />
       </div>
       <div id="projects">
         <ProjectsSection />
-      </div>
-      <div id="services">
-        <PricingSection />
       </div>
       <div id="contact">
         <PartnerSection />

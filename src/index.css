@@ -1,7 +1,29 @@
 @import "tailwindcss";
 
+/* Fonts */
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('https://assets.website-files.com/6009ec8cda7f305645c9d91b/60176f9bb43e36419997ecfe_PPNeueMontreal-Book.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('https://assets.website-files.com/6009ec8cda7f305645c9d91b/60176f9b39c5673e51a86f5a_PPNeueMontreal-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Mondwest';
+  src: url('/PPMondwest-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
 @theme {
-  --font-body: 'PP Neue Montreal', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'PP Neue Montreal', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-serif: 'PP Mondwest', Georgia, 'Times New Roman', serif;
   --color-brand-dark: #051A24;
   --color-brand-title: #0D212C;
@@ -11,34 +33,23 @@
 
 /* Animations */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 @keyframes trailDot {
-  0% {
-    opacity: 0.4;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.3);
-  }
+  0% { opacity: 0.4; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.3); }
+}
+
+@keyframes trailFade {
+  0% { opacity: 0.8; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.5); }
 }
 
 .animate-fadeInUp {

@@ -9,22 +9,21 @@ const GIFS = [
   'https://motionsites.ai/assets/hero-nexora-preview-cx5HmUgo.gif',
 ]
 
-// Double the array for seamless loop
 const ITEMS = [...GIFS, ...GIFS]
 
 export function MarqueeSection() {
   return (
     <section className="py-12 overflow-hidden bg-[#F6FCFF]">
-      <div className="flex animate-marquee">
+      <div className="flex animate-marquee hover:[animation-play-state:paused]">
         {ITEMS.map((gif, i) => (
           <div
             key={i}
-            className="flex-shrink-0 w-64 h-40 mx-4 rounded-2xl overflow-hidden shadow-[0_2px_12px_rgba(5,26,36,0.06)] border border-[#051A24]/5"
+            className="flex-shrink-0 mx-3 rounded-2xl overflow-hidden shadow-lg border border-[#051A24]/5"
           >
             <img
               src={gif}
               alt={`Product preview ${i + 1}`}
-              className="w-full h-full object-cover"
+              className="h-[280px] md:h-[500px] object-cover"
               loading="lazy"
             />
           </div>

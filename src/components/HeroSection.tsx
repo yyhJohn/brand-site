@@ -7,38 +7,78 @@ export function HeroSection() {
   const { ref, isInView } = useInViewAnimation()
 
   return (
-    <section id="home" ref={ref} className="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-16 bg-white">
-      <div className={cn(
-        'max-w-3xl mx-auto text-center',
-        isInView ? 'animate-fadeInUp' : 'opacity-0'
-      )}>
-        <p className="font-body text-xs uppercase tracking-[0.3em] text-[#273C46]/60 mb-6">
+    <section ref={ref} className="relative min-h-screen flex items-center justify-center px-6 pt-12 md:pt-16 pb-16 bg-white">
+      <div className="max-w-[440px] mx-auto">
+        {/* Logo */}
+        <h1
+          className={cn(
+            'font-serif text-[32px] md:text-[40px] lg:text-[44px] font-semibold text-[#051A24] tracking-tight mb-4',
+            isInView ? 'animate-fadeInUp' : 'opacity-0'
+          )}
+          style={{ animationDelay: '0.1s' }}
+        >
           HoyoMax Studio
-        </p>
-        <h1 className="font-serif text-5xl md:text-7xl font-normal text-[#0D212C] leading-[1.1] mb-8">
-          We build tools that
-          <br />
-          <span className="italic">think for you</span>
         </h1>
-        <p className="font-body text-lg md:text-xl text-[#273C46] max-w-xl mx-auto leading-relaxed mb-10">
-          AI products, developer platforms, and creative systems — designed with precision, shipped with care.
+
+        {/* Tagline */}
+        <p
+          className={cn(
+            'font-mono text-xs md:text-sm text-[#051A24] mb-2',
+            isInView ? 'animate-fadeInUp' : 'opacity-0'
+          )}
+          style={{ animationDelay: '0.2s' }}
+        >
+          AI products, web platforms, and developer systems
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#projects">
-            <Button variant="primary">
-              View Our Work <ArrowRight className="w-4 h-4" />
-            </Button>
-          </a>
+
+        {/* Main heading */}
+        <h2
+          className={cn(
+            'text-[32px] md:text-[40px] lg:text-[44px] leading-[1.1] text-[#0D212C] tracking-tight mb-6',
+            isInView ? 'animate-fadeInUp' : 'opacity-0'
+          )}
+          style={{ animationDelay: '0.3s' }}
+        >
+          Build <span className="font-serif">smarter products,</span>
+          <br />
+          the <span className="font-serif">AI-native way.</span>
+        </h2>
+
+        {/* Description */}
+        <div
+          className={cn(
+            'flex flex-col gap-6 text-sm md:text-base text-[#051A24] leading-relaxed mt-5 md:mt-6',
+            isInView ? 'animate-fadeInUp' : 'opacity-0'
+          )}
+          style={{ animationDelay: '0.4s' }}
+        >
+          <p>
+            I build AI-powered platforms, developer tools, and production-ready web systems that turn complex ideas into polished digital products.
+          </p>
+          <p>
+            From OpenClaw automation and UniAPI infrastructure to AI study planning and campus systems, the studio focuses on practical products that can be shipped, tested, and scaled.
+          </p>
+          <p>
+            Designed for founders, students, and builders who want fast execution without losing product quality.
+          </p>
+        </div>
+
+        {/* Buttons */}
+        <div
+          className={cn(
+            'flex flex-col sm:flex-row gap-3 md:gap-4 mt-5 md:mt-6',
+            isInView ? 'animate-fadeInUp' : 'opacity-0'
+          )}
+          style={{ animationDelay: '0.5s' }}
+        >
           <a href="mailto:contact@hoyomax.me">
-            <Button variant="secondary">
-              Get in Touch
-            </Button>
+            <Button variant="primary">Start a chat</Button>
+          </a>
+          <a href="#products">
+            <Button variant="secondary">View products</Button>
           </a>
         </div>
       </div>
-
-      {/* Soft gradient decoration */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-[#F6FCFF] to-transparent rounded-full blur-3xl opacity-60 pointer-events-none" />
     </section>
   )
 }
